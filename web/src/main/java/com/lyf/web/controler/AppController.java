@@ -13,7 +13,13 @@ public class AppController {
     @HystrixCommand(fallbackMethod = "slowQueryFallback")
     @RequestMapping(path = "user", method = RequestMethod.GET)
     @ResponseBody
-    public Object userGet() {
+    public Object userGet() throws Exception {
+        int random = (int) (Math.random() * 10) + 1;
+
+        if (random % 3 == 0) {
+            throw new Exception("test exception");
+        }
+
         return "GET";
     }
 
@@ -27,5 +33,10 @@ public class AppController {
     @ResponseBody
     public Object userAdd() {
         return "POST";
+    }
+
+    private Object slowQueryFallback() {
+        System.out.println("slowQueryFallback");
+        return "slowQueryFallback";
     }
 }
