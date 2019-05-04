@@ -9,7 +9,7 @@
     <title>首页</title>
 </head>
 <body><center>
-                    基于SSM框架的管理系统：简单实现增、删、改、查。
+                    SSM框架实现操作数据库
 <br><br>
 <h3>
     <a href="${path }/app/user">点击进入登录页面</a>
