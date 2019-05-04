@@ -1,10 +1,10 @@
-package com.lyf.web.dao;
+package com.lyf.web.service;
 
 import com.lyf.web.model.Hero;
 
 import java.util.List;
 
-public interface Function {
+public interface Functionservice {
     public List<Hero> findAll();
     public Hero findById(int id);
     public void deleteById(int id);

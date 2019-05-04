@@ -16,6 +16,7 @@
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <mybatis.version>3.2.8</mybatis.version>
@@ -32,7 +33,11 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.35</version>
+        </dependency>
         <!-- spring -->
         <dependency><!--没有spring-tx包，下个吧-->
             <groupId>org.springframework</groupId>
@@ -108,12 +113,19 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.35</version>
     </dependency>
-    <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
-    <dependency>
-        <groupId>commons-dbcp</groupId>
-        <artifactId>commons-dbcp</artifactId>
-        <version>1.4</version>
-    </dependency>
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
+
     <!-- jstl标签类 -->
     <dependency>
         <groupId>jstl</groupId>
@@ -136,5 +148,19 @@
         <artifactId>slf4j-log4j12</artifactId>
         <version>${slf4j.version}</version>
     </dependency>
+        <!--分别导入jsp和servlet的包-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>
